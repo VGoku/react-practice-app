@@ -1,0 +1,150 @@
+/* src/Counter.css */
+.counter-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  transition: background-color 0.5s ease;
+}
+
+.counter-wrapper.dark {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+}
+
+.counter-wrapper.light {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #000;
+}
+
+.counter-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.fire-icon {
+  color: #ffa500;
+  animation: flame 1.5s ease-in-out infinite alternate;
+}
+
+.fire-icon.left {
+  transform-origin: center right;
+}
+
+.fire-icon.right {
+  transform-origin: center left;
+}
+
+@keyframes flame {
+  0% {
+    transform: scale(1) rotate(-5deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.2) rotate(5deg);
+    opacity: 1;
+  }
+}
+
+.count-display {
+  font-size: 6rem;
+  font-weight: bold;
+  margin: 30px 0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.count-display.milestone {
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.cosmic-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dark .cosmic-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.light .cosmic-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.toggle-mode {
+  margin-top: 20px;
+  width: auto;
+  padding: 12px 24px;
+}
+
+.particles {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .counter-glass {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .count-display {
+    font-size: 4rem;
+  }
+
+  .cosmic-button {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
